@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Compare Packages</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Package</th>
+            <th>Description</th>
+            <th>Base Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for package in packages %}
+        <tr>
+            <td>{{ package.name }}</td>
+            <td>{{ package.description }}</td>
+            <td>${{ package.base_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

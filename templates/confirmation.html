@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Booking Confirmation</h2>
+<p>Your trip to <strong>{{ booking.destination }}</strong> is confirmed!</p>
+<ul>
+    <li>Departure Date: {{ booking.departure_date }}</li>
+    <li>Seat Class: {{ booking.seat_class }}</li>
+    <li>Price: ${{ booking.price }}</li>
+</ul>
+<a href="{{ url_for('dashboard') }}" class="btn btn-success">Go to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Book Your Trip</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.destination.label(class="form-label") }}
+        {{ form.destination(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.departure_date.label(class="form-label") }}
+        {{ form.departure_date(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.seat_class.label(class="form-label") }}
+        {{ form.seat_class(class="form-select") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+</form>
+{% endblock %}

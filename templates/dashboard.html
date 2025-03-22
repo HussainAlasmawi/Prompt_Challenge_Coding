@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<p>Welcome, {{ current_user.username }}!</p>
+
+<h4>Your Bookings</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Departure Date</th>
+            <th>Seat Class</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.destination }}</td>
+            <td>{{ booking.departure_date }}</td>
+            <td>{{ booking.seat_class }}</td>
+            <td>${{ booking.price }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">No bookings yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h5 class="mt-4">AI Travel Tip</h5>
+<p>{{ tip }}</p>
+{% endblock %}
